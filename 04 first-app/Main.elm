@@ -5,7 +5,7 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 
--- model
+-- Model
 
 
 type alias Model =
@@ -44,7 +44,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ h3 []
-            [ text ("Total Calories: " ++ (toString model)) ]
+            [ text ("Total calories: " ++ toString model) ]
         , button
             [ type_ "button"
             , onClick AddCalorie
