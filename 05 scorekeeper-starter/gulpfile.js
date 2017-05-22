@@ -18,22 +18,24 @@ gulp.task('watch', function(cb) {
 
 gulp.task('server', function(done) {
   gutil.log(gutil.colors.blue('Starting server at http://localhost:4000'));
-  http.createServer(
-    st({
-      path: __dirname,
-      index: 'index.html',
-      cache: false
-    })
-  ).listen(4000, done);
+  http
+    .createServer(
+      st({
+        path: __dirname,
+        index: 'index.html',
+        cache: false,
+      })
+    )
+    .listen(4000, done);
 });
 
 gulp.task('elm', function(cb) {
-  if (counter > 0){
+  if (counter > 0) {
     clear();
   }
   exec(cmd, function(err, stdout, stderr) {
-    if (err){
-      gutil.log(gutil.colors.red('elm make: '),gutil.colors.red(stderr));
+    if (err) {
+      gutil.log(gutil.colors.red('elm make: '), gutil.colors.red(stderr));
     } else {
       gutil.log(gutil.colors.green('elm make: '), gutil.colors.green(stdout));
     }
